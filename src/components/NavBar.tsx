@@ -23,7 +23,7 @@ export function NavBar() {
         <div className="collapse navbar-collapse">
           <ul className="navbar-nav">
             {navItems.map((navItem) => (
-              <li className="nav-item">
+              <li key={navItem.to} className="nav-item">
                 <NavLink
                   to={navItem.to}
                   className="nav-link"
