@@ -3,6 +3,7 @@ import './App.css';
 
 import { NavBar } from './components/NavBar';
 import { PrimeNumbers } from './components/PrimeNumbers';
+import { UserList } from './components/users/UserList';
 
 function App() {
   return (
@@ -10,7 +11,9 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route path="/users">Users</Route>
+          <Route path="/users">
+            <UserList />
+          </Route>
           <Route path="/primes">
             <PrimeNumbers />
           </Route>
