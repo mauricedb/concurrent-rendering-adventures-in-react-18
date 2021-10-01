@@ -1,5 +1,5 @@
 import useSWR from 'swr';
-import type { Account, Movie } from '../../types';
+import type { Movie } from '../../types';
 import Loading from '../Loading';
 
 interface Props {
