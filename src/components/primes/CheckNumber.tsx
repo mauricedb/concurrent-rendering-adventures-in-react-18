@@ -1,4 +1,4 @@
-import { isPrime } from '../utils/isPrime';
+import { isPrime } from '../../utils/isPrime';
 import classes from './CheckNumber.module.css';
 
 interface Props {

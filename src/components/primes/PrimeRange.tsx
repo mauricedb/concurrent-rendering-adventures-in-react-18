@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { roundUp } from '../utils/roundUp';
+import { roundUp } from '../../utils/roundUp';
 
 const selectItems = [100, 1_000, 10_000, 100_000, 1_000_000];
 

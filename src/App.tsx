@@ -2,7 +2,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
 
 import { NavBar } from './components/NavBar';
-import { PrimeNumbers } from './components/PrimeNumbers';
+import { PrimeNumbers } from './components/primes/PrimeNumbers';
 import { UserList } from './components/users/UserList';
 
 function App() {
