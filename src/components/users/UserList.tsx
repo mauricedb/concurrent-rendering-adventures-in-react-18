@@ -21,7 +21,7 @@ export function UserList() {
     <div className="row">
       <h2 className="text-center mt-5">Users</h2>
 
-      <div className="col-3">
+      <div className="col-3 g-2">
         <ul className="list-group">
           {data.map((user) => (
             <li
