@@ -1,6 +1,7 @@
 import useSWR from 'swr';
 import type { Account } from '../../types';
 import Loading from '../Loading';
+import { LabelInput } from './LabelInput';
 interface Props {
   userId: number;
 }
@@ -19,18 +20,9 @@ export function AccountDetails({ userId }: Props) {
 
   return (
     <div className="row">
-      <div className="mb-3">
-        <label className="form-label">Firstname</label>
-        <input className="form-control" value={account.firstname} readOnly />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Surname</label>
-        <input className="form-control" value={account.surname} readOnly />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Email address</label>
-        <input className="form-control" value={account.email} readOnly />
-      </div>
+      <LabelInput label="Firstname" value={account.firstname} readOnly />
+      <LabelInput label="Surname" value={account.surname} readOnly />
+      <LabelInput label="Email address" value={account.email} readOnly />
     </div>
   );
 }

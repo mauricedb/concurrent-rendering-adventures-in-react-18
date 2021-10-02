@@ -1,6 +1,8 @@
 import useSWR from 'swr';
 import type { Movie } from '../../types';
 import Loading from '../Loading';
+import { LabelInput } from './LabelInput';
+import { LabelTextarea } from './LabelTextarea';
 
 interface Props {
   movieId: number;
@@ -20,23 +22,14 @@ export function MovieDetails({ movieId }: Props) {
 
   return (
     <div className="row">
-      <div className="mb-3">
-        <label className="form-label">Title</label>
-        <input className="form-control" value={movie.title} readOnly />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Release date</label>
-        <input className="form-control" value={movie.release_date} readOnly />
-      </div>
-      <div className="mb-3">
-        <label className="form-label">Overview</label>
-        <textarea
-          className="form-control"
-          rows={5}
-          value={movie.overview}
-          readOnly
-        />
-      </div>
+      <LabelInput label="Title" value={movie.title} readOnly />
+      <LabelInput label="Release date" value={movie.release_date} readOnly />
+      <LabelTextarea
+        label="Overview"
+        value={movie.overview}
+        readOnly
+        rows={5}
+      />
     </div>
   );
 }
