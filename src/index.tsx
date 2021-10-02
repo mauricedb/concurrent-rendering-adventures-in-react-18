@@ -1,10 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { ErrorBoundary } from 'react-error-boundary';
+import { SWRConfig } from 'swr';
+
 import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { SWRConfig } from 'swr';
+
+import App from './App';
+import { ErrorFallback } from './components/ErrorFallback';
 
 async function fetcher(url: string) {
   const rsp = await fetch(url);
@@ -17,11 +21,13 @@ async function fetcher(url: string) {
 }
 
 ReactDOM.render(
-  <React.StrictMode>
-    <SWRConfig value={{ fetcher }}>
-      <App />
-    </SWRConfig>
-  </React.StrictMode>,
+  <ErrorBoundary FallbackComponent={ErrorFallback}>
+    <React.StrictMode>
+      <SWRConfig value={{ fetcher }}>
+        <App />
+      </SWRConfig>
+    </React.StrictMode>
+  </ErrorBoundary>,
   document.getElementById('root')
 );
 
