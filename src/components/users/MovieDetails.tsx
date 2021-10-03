@@ -1,24 +1,17 @@
 import useSWR from 'swr';
 import type { Movie } from '../../types';
-import { Loading } from '../Loading';
 import { LabelInput } from './LabelInput';
 import { LabelTextarea } from './LabelTextarea';
 
 interface Props {
   movieId: number;
 }
+
 export function MovieDetails({ movieId }: Props) {
-  const { data: movie, error } = useSWR<Movie, Error>(
+  const { data } = useSWR<Movie, Error>(
     `${process.env.REACT_APP_API_BASE}/top-rated-movies/${movieId}?sleep=500`
   );
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
-
-  if (!movie) {
-    return <Loading />;
-  }
+  const movie = data!;
 
   return (
     <div className="row">

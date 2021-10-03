@@ -5,17 +5,9 @@ import { UserDetails } from './UserDetails';
 
 export function UserList() {
   const [selectedUser, setSelectedUser] = useState<Account | null>(null);
-  const { data, error } = useSWR<Account[], Error>(
+  const { data } = useSWR<Account[], Error>(
     `${process.env.REACT_APP_API_BASE}/accounts`
   );
-
-  if (error) {
-    return <div>{error.message}</div>;
-  }
-
-  if (!data) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <div className="row">
@@ -23,7 +15,7 @@ export function UserList() {
 
       <div className="col-3 g-2">
         <ul className="list-group">
-          {data.map((user) => (
+          {data?.map((user) => (
             <li
               key={user.id}
               className={
