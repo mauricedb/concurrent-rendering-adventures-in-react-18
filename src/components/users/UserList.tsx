@@ -37,6 +37,7 @@ export function UserList() {
       <div className="col-6">
         {selectedUser && (
           <UserDetails
+            key={selectedUser.id}
             userId={selectedUser.id}
             movieId={selectedUser.favorite_movie}
           />
