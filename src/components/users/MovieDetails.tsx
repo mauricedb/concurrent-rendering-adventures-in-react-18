@@ -9,7 +9,7 @@ interface Props {
 }
 export function MovieDetails({ movieId }: Props) {
   const { data: movie, error } = useSWR<Movie, Error>(
-    `https://the-problem-solver-sample-data.azurewebsites.net/top-rated-movies/${movieId}?sleep=500`
+    `${process.env.REACT_APP_API_BASE}/top-rated-movies/${movieId}?sleep=500`
   );
 
   if (error) {

@@ -7,7 +7,7 @@ interface Props {
 }
 export function AccountDetails({ userId }: Props) {
   const { data: account, error } = useSWR<Account, Error>(
-    `https://the-problem-solver-sample-data.azurewebsites.net/accounts/${userId}?sleep=1000`
+    `${process.env.REACT_APP_API_BASE}/accounts/${userId}?sleep=1000`
   );
 
   if (error) {

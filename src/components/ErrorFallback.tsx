@@ -8,7 +8,7 @@ export function ErrorFallback({ error, resetErrorBoundary }: FallbackProps) {
       role="alert"
     >
       <h4 className="alert-heading">
-        ⚠ Oops, something went wrong{' '}
+        ⚠ Oops, something went wrong
         <button
           type="button"
           className="btn-close float-end"
