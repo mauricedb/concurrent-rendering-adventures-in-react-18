@@ -11,7 +11,7 @@ import { ErrorFallback } from './components/ErrorFallback';
 import { fetcher } from './utils/fetcher';
 import { Loading } from './components/Loading';
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <ErrorBoundary FallbackComponent={ErrorFallback}>
     <Suspense fallback={<Loading />}>
       <React.StrictMode>
@@ -20,8 +20,7 @@ ReactDOM.render(
         </SWRConfig>
       </React.StrictMode>
     </Suspense>
-  </ErrorBoundary>,
-  document.getElementById('root')
+  </ErrorBoundary>
 );
 
 // If you want to start measuring performance in your app, pass a function
