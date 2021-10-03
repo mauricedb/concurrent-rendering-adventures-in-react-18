@@ -1,10 +1,11 @@
-import { startTransition, useState } from 'react';
+import { useTransition, useState } from 'react';
 import { CheckNumber } from './CheckNumber';
 import { PrimeRange } from './PrimeRange';
 
 const defaultValue = 250;
 
 export function PrimeNumbers() {
+  const [isPending, startTransition] = useTransition();
   const [maxPrime, setMaxPrime] = useState(defaultValue);
   const values = new Array(maxPrime).fill(null);
 
@@ -20,7 +21,13 @@ export function PrimeNumbers() {
         {values
           .filter((_, index) => index < 10_000)
           .map((_, index) => {
-            return <CheckNumber key={index} value={maxPrime - index} />;
+            return (
+              <CheckNumber
+                key={index}
+                value={maxPrime - index}
+                isPending={isPending}
+              />
+            );
           })}
       </div>
     </div>
