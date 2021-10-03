@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { startTransition, useState } from 'react';
 import { CheckNumber } from './CheckNumber';
 import { PrimeRange } from './PrimeRange';
 
@@ -13,7 +13,7 @@ export function PrimeNumbers() {
       <h2 className="text-center mt-5">Prime Numbers</h2>
       <PrimeRange
         defaultValue={defaultValue}
-        onChange={(value) => setMaxPrime(value)}
+        onChange={(value) => startTransition(() => setMaxPrime(value))}
       />
 
       <div className="row row-cols-auto g-2">
