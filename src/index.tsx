@@ -8,16 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 import App from './App';
 import { ErrorFallback } from './components/ErrorFallback';
-
-async function fetcher(url: string) {
-  const rsp = await fetch(url);
-  if (rsp.ok) {
-    const data = await rsp.json();
-    return data;
-  } else {
-    throw new Error(rsp.statusText);
-  }
-}
+import { fetcher } from './utils/fetcher';
 
 ReactDOM.render(
   <ErrorBoundary FallbackComponent={ErrorFallback}>
