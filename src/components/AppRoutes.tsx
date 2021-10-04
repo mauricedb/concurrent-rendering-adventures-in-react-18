@@ -4,7 +4,7 @@ import { UserList } from './users/UserList';
 import atomium from './atomium.jpg';
 
 export function AppRoutes() {
-  let element = useRoutes([
+  const element = useRoutes([
     {
       path: '/',
       element: (
