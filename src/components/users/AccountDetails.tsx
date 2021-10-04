@@ -1,6 +1,6 @@
 import useSWR from 'swr';
 import type { Account } from '../../types';
-import Loading from '../Loading';
+import { Loading } from '../Loading';
 import { LabelInput } from './LabelInput';
 interface Props {
   userId: number;
