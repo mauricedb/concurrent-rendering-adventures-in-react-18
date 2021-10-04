@@ -4,7 +4,6 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { SWRConfig } from 'swr';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './index.css';
 import reportWebVitals from './reportWebVitals';
 
 import App from './App';

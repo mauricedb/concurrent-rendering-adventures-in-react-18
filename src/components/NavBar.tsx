@@ -24,11 +24,7 @@ export function NavBar() {
           <ul className="navbar-nav">
             {navItems.map((navItem) => (
               <li key={navItem.to} className="nav-item">
-                <NavLink
-                  to={navItem.to}
-                  className="nav-link"
-                  activeClassName="active"
-                >
+                <NavLink to={navItem.to} className="nav-link">
                   {navItem.caption}
                 </NavLink>
               </li>
