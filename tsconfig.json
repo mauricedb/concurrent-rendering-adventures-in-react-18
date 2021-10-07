@@ -15,7 +15,7 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "types": ["react-dom/experimental", "react/experimental"]
+    "types": ["react-dom/next", "react/next"]
   },
   "include": ["src"]
 }
