@@ -1,7 +1,7 @@
 import { useRoutes } from 'react-router';
 import { PrimeNumbers } from './primes/PrimeNumbers';
 import { UserList } from './users/UserList';
-import atomium from './atomium.jpg';
+import parliament from './parliament.jpg';
 
 export function AppRoutes() {
   const element = useRoutes([
@@ -12,7 +12,11 @@ export function AppRoutes() {
           <h2 className="text-center mt-5">
             Concurrent Rendering Adventures in React 18
           </h2>
-          <img className="g-5" src={atomium} alt="React Brussels" />
+          <img
+            className="g-5"
+            src={parliament}
+            alt="House of Parliament, London"
+          />
         </div>
       ),
     },
