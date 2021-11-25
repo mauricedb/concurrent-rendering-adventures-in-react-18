@@ -1,4 +1,4 @@
-import { unstable_useOpaqueIdentifier } from 'react';
+import { useId } from 'react';
 import { InputHTMLAttributes } from 'react';
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> {
@@ -7,7 +7,7 @@ interface Props extends InputHTMLAttributes<HTMLInputElement> {
 }
 
 export function LabelInput({ label, value, ...rest }: Props) {
-  const id = unstable_useOpaqueIdentifier();
+  const id = useId();
 
   return (
     <div className="mb-3">

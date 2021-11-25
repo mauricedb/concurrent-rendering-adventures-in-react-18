@@ -1,4 +1,4 @@
-import { TextareaHTMLAttributes, unstable_useOpaqueIdentifier } from 'react';
+import { TextareaHTMLAttributes, useId } from 'react';
 
 interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
   label: string;
@@ -6,7 +6,7 @@ interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 }
 
 export function LabelTextarea({ label, value, ...rest }: Props) {
-  const id = unstable_useOpaqueIdentifier();
+  const id = useId();
 
   return (
     <div className="mb-3">
