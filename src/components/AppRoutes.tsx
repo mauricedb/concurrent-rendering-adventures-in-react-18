@@ -1,4 +1,4 @@
-import { useRoutes } from 'react-router';
+import { useRoutes } from 'react-router-dom';
 import { PrimeNumbers } from './primes/PrimeNumbers';
 import { UserList } from './users/UserList';
 import atomium from './atomium.jpg';
